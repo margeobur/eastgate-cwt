@@ -1,3 +1,44 @@
 .App {
   text-align: center;
 }
+
+/*
+* Sidebar CSS stolen from this Bootstrap example:
+* https://github.com/twbs/bootstrap/blob/master/site/content/docs/4.3/examples/dashboard/dashboard.css
+*/
+
+.sidebar {
+  z-index: 100; /* Behind the navbar */
+  padding: 24px 0 0; /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+@media (max-width: 570px) {
+  .sidebar-sticky {
+    height: 8vh;
+    padding-top: 0.25rem;
+  }
+}
+
+.indicator-area {
+  padding: 5%;
+}
+
+.scene-indicator {
+  height: 35vmin;
+  margin: 10px;
+}
+
+main .row {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
