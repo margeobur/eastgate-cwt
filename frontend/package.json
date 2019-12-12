@@ -1,7 +1,9 @@
 {
-  "name": "walkthrough-hub",
-  "version": "0.1.0",
+  "name": "eastgate-cwt-frontend",
+  "version": "0.1.1",
   "private": true,
+  "files": "./build",
+  "main:": "./build/index.html",
   "dependencies": {
     "@types/jest": "24.0.23",
     "@types/node": "12.12.14",
