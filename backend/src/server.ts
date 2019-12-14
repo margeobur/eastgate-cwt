@@ -14,6 +14,8 @@ const createCTWServer = (server: Server, path: string) => {
   wss.on("connection", (ws: WebSocket) => {
     ws.on("message", (message: string) => {
       const data = JSON.parse(message);
+      console.log("data: ");
+      console.log(data);
 
       if (data) {
         if (
@@ -26,32 +28,41 @@ const createCTWServer = (server: Server, path: string) => {
           switch (data.source) {
             case "scene1":
               sceneStates.scene1 = data.status;
+              console.log("setting scene 1");
               break;
             case "scene2":
               sceneStates.scene2 = data.status;
+
+              console.log("setting scene 2");
               break;
             case "scene3":
               sceneStates.scene3 = data.status;
+
+              console.log("setting scene 3");
               break;
             case "scene4":
               sceneStates.scene4 = data.status;
+
+              console.log("setting scene 4");
               break;
           }
 
           wss.clients.forEach(client => {
-            client.send(message);
+            client.send(JSON.stringify(sceneStates));
           });
         }
       }
     });
 
     // When a client connects, send them the current sceneStates
-    ws.send({
-      scene1: sceneStates.scene1,
-      scene2: sceneStates.scene2,
-      scene3: sceneStates.scene3,
-      scene4: sceneStates.scene4
-    });
+    ws.send(
+      JSON.stringify({
+        scene1: sceneStates.scene1,
+        scene2: sceneStates.scene2,
+        scene3: sceneStates.scene3,
+        scene4: sceneStates.scene4
+      })
+    );
   });
 
   return wss;

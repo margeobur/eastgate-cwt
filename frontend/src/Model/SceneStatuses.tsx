@@ -6,7 +6,7 @@ export type ColorMapT = {
 
 export const colorMap: ColorMapT = {
   idle: "#3EE03E",
-  filling: "#E03E3E",
-  live: "#FAAC27",
+  filling: "#FAAC27",
+  live: "#E03E3E",
   emptying: "#3EABE0"
 };
