@@ -1,0 +1,20 @@
+.StatusButtonContainer {
+  padding: 0 20% 0 20%;
+  margin-bottom: 60px;
+}
+
+@media only screen and (max-width: 950px) {
+  .StatusButtonContainer .btn-block {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .StatusButton {
+    display: block;
+    width: 100%;
+  }
+  .StatusButton + .StatusButton {
+    margin-top: 4vh;
+  }
+}

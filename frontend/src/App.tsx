@@ -6,6 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Row from "react-bootstrap/Row";
 import "./App.css";
 import SceneStatuses from "./Components/SceneStatus/SceneStatuses";
+import SceneControls from "./Components/SceneControls/SceneControls";
 
 const App: React.FC = () => {
   return (
@@ -15,43 +16,14 @@ const App: React.FC = () => {
       </Navbar>
       <Container fluid className="MainContainer">
         <Row className="h-100">
-          <Col as="nav" md={3} className="sidebar fullHeight-Medium-Up">
+          <Col
+            as="nav"
+            md={3}
+            className="sidebar fullHeight-Medium-Up .d-none .d-sm-block"
+          >
             <h1 className="SceneHeader">Scene 1</h1>
             <div style={{ flexGrow: 1 }}></div>
-            <div className="StatusButtonContainer">
-              <Button
-                variant="primary"
-                size="lg"
-                block
-                style={{ backgroundColor: "#FAAC27" }}
-              >
-                FILLING
-              </Button>
-              <Button
-                variant="primary"
-                size="lg"
-                block
-                style={{ backgroundColor: "#E03E3E" }}
-              >
-                START
-              </Button>
-              <Button
-                variant="primary"
-                size="lg"
-                block
-                style={{ backgroundColor: "#3EABE0" }}
-              >
-                EMPTYING
-              </Button>
-              <Button
-                variant="primary"
-                size="lg"
-                block
-                style={{ backgroundColor: "#3EE03E" }}
-              >
-                FINISHED
-              </Button>
-            </div>
+            <SceneControls scene={window.location.pathname.replace("/", "")} />
           </Col>
           <Col
             as="main"

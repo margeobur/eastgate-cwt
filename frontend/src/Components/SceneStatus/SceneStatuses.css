@@ -7,6 +7,16 @@
   padding: 3% 3% 3% 3%;
 }
 
+.StatusIndicatorRow .col-6 {
+  display: flex;
+  padding: 3% 3% 3% 3%;
+}
+
+.StatusIndicatorRow .col-12 {
+  display: flex;
+  padding: 3% 3% 3% 3%;
+}
+
 .SceneIndicator {
   height: auto;
   width: auto;
