@@ -1,11 +1,11 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Row from "react-bootstrap/Row";
 import "./App.css";
+import SceneStatuses from "./Components/SceneStatus/SceneStatuses";
 
 const App: React.FC = () => {
   return (
@@ -59,42 +59,7 @@ const App: React.FC = () => {
             className="h-100"
             style={{ padding: "20px 70px 20px 70px" }}
           >
-            <Row className="StatusIndicatorRow">
-              <Col>
-                <Card
-                  className="scene-indicator"
-                  style={{ backgroundColor: "#3EE03E" }}
-                >
-                  <Card.Text>1</Card.Text>
-                </Card>
-              </Col>
-              <Col>
-                <Card
-                  className="scene-indicator"
-                  style={{ backgroundColor: "#E03E3E" }}
-                >
-                  <Card.Text>2</Card.Text>
-                </Card>
-              </Col>
-            </Row>
-            <Row className="StatusIndicatorRow">
-              <Col>
-                <Card
-                  className="scene-indicator"
-                  style={{ backgroundColor: "#FAAC27" }}
-                >
-                  <Card.Text>4</Card.Text>
-                </Card>
-              </Col>
-              <Col>
-                <Card
-                  className="scene-indicator"
-                  style={{ backgroundColor: "#3EABE0" }}
-                >
-                  <Card.Text>3</Card.Text>
-                </Card>
-              </Col>
-            </Row>
+            <SceneStatuses />
           </Col>
         </Row>
       </Container>
