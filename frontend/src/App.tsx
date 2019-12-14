@@ -15,16 +15,49 @@ const App: React.FC = () => {
       </Navbar>
       <Container fluid className="MainContainer">
         <Row className="h-100">
-          <Col as="nav" md={3} className="sidebar h-100">
-            <div className="sidebar-sticky">
-              <Button variant="primary">Start</Button>
+          <Col as="nav" md={3} className="sidebar fullHeight-Medium-Up">
+            <h1 className="SceneHeader">Scene 1</h1>
+            <div style={{ flexGrow: 1 }}></div>
+            <div className="StatusButtonContainer">
+              <Button
+                variant="primary"
+                size="lg"
+                block
+                style={{ backgroundColor: "#FAAC27" }}
+              >
+                FILLING
+              </Button>
+              <Button
+                variant="primary"
+                size="lg"
+                block
+                style={{ backgroundColor: "#E03E3E" }}
+              >
+                START
+              </Button>
+              <Button
+                variant="primary"
+                size="lg"
+                block
+                style={{ backgroundColor: "#3EABE0" }}
+              >
+                EMPTYING
+              </Button>
+              <Button
+                variant="primary"
+                size="lg"
+                block
+                style={{ backgroundColor: "#3EE03E" }}
+              >
+                FINISHED
+              </Button>
             </div>
           </Col>
           <Col
             as="main"
             md={9}
             className="h-100"
-            style={{ padding: "20px 50px 20px 50px" }}
+            style={{ padding: "20px 70px 20px 70px" }}
           >
             <Row className="StatusIndicatorRow">
               <Col>
