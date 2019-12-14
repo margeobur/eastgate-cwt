@@ -1,44 +1,97 @@
+@media only screen and (min-width: 768px) {
+  .fullHeight-Medium-Up {
+    height: 100% !important;
+  }
+}
+
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
-/*
-* Sidebar CSS stolen from this Bootstrap example:
-* https://github.com/twbs/bootstrap/blob/master/site/content/docs/4.3/examples/dashboard/dashboard.css
-*/
+.TitleBar {
+  background-color: #2e5e84;
+}
+
+.TitleBar .navbar-brand {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #eeeeee;
+}
+
+.MainContainer {
+  flex-grow: 1;
+}
+
+.SceneHeader {
+  margin-top: 15px;
+  font-size: 3em;
+  font-family: Roboto, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+}
+
+.StatusIndicatorRow {
+  height: 50%;
+}
+
+.StatusIndicatorRow .col {
+  display: flex;
+  padding: 3% 3% 3% 3%;
+}
 
 .sidebar {
-  z-index: 100; /* Behind the navbar */
-  padding: 24px 0 0; /* Height of navbar */
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  background-color: #ececec;
+  display: flex;
+  flex-direction: column;
 }
 
-.sidebar-sticky {
-  position: relative;
-  top: 0;
-  height: calc(100vh - 48px);
-  padding-top: 0.5rem;
-  overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+.StatusButtonContainer {
+  padding: 0 20% 0 20%;
+  margin-bottom: 60px;
 }
 
-@media (max-width: 570px) {
+@media only screen and (max-width: 950px) {
+  .StatusButtonContainer .btn-block {
+    font-size: 16px;
+  }
+}
+
+.StatusButtonContainer .btn-block + .btn-block {
+  margin-top: 4vh;
+}
+
+/* @media (max-width: 570px) {
   .sidebar-sticky {
     height: 8vh;
     padding-top: 0.25rem;
   }
-}
+} */
 
-.indicator-area {
+/* .indicator-area {
   padding: 5%;
-}
+} */
 
 .scene-indicator {
-  height: 35vmin;
-  margin: 10px;
+  height: auto;
+  width: auto;
+  flex-grow: 1;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.16);
+  font-family: Roboto, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  text-align: left;
 }
 
+.scene-indicator p {
+  font-size: 10vh;
+  padding-left: 10px;
+  position: relative;
+  top: -10px;
+}
+
+/* 
 main .row {
   padding-top: 2vh;
   padding-bottom: 2vh;
-}
+} */
