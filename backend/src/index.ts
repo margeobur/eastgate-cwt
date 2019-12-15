@@ -13,8 +13,13 @@ const server = createServer(app);
 const wss = createCWTServer(server, websocketPath);
 
 const router = express.Router();
+
 app.use("/", router);
 app.use(express.static(path.join(__dirname, "build")));
+
+app.get('*', (req,res) =>{
+  res.sendFile(path.join(__dirname+'/build/index.html'));
+});
 
 server.listen(port, () => {
   const address = server.address();
