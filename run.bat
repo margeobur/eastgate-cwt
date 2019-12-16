@@ -1,0 +1,1 @@
+node .\backend\dist\server\index.js
