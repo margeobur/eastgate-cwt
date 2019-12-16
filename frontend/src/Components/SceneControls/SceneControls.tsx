@@ -8,17 +8,33 @@ interface IProps {
   scene: string;
 }
 
-var wsClient = new WebSocket(config.WebsocketsURL);
-
 const SceneControls: React.FC<IProps> = (props: IProps) => {
+  let wsClient: WebSocket | null = null;
+
+  useEffect(() => {
+    try {
+      wsClient = new WebSocket(config.WebsocketURL);
+    } catch (e) {
+      alert(e);
+    }
+
+    return function cleanup() {
+      if (wsClient !== null) {
+        wsClient.close();
+      }
+    };
+  });
+
   function handleClick(status: string) {
-    wsClient.send(
-      JSON.stringify({
-        messageType: "status-update",
-        source: `scene${props.scene}`,
-        status: status
-      })
-    );
+    if (wsClient !== null) {
+      wsClient.send(
+        JSON.stringify({
+          messageType: "status-update",
+          source: `scene${props.scene}`,
+          status: status
+        })
+      );
+    }
   }
 
   return (

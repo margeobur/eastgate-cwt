@@ -16,3 +16,9 @@ html,
 body {
   height: 100%;
 }
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}

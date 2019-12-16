@@ -4,12 +4,6 @@
   }
 }
 
-.App {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
-
 .TitleBar {
   background-color: #2e5e84;
 }

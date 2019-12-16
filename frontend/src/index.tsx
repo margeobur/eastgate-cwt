@@ -1,10 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import Navbar from "react-bootstrap/Navbar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const Routes = () => {
+  return (
+    <div className="App h-100">
+      <Router>
+        <Navbar sticky="top" expand="lg" className="TitleBar">
+          <Navbar.Brand href="#home">Christmas Walkthrough</Navbar.Brand>
+        </Navbar>
+        <Switch>
+          <Route path="/:scene" children={<App />} />
+          <Route path="/" children={<App />} />
+        </Switch>
+      </Router>
+    </div>
+  );
+};
+
+ReactDOM.render(<Routes />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
