@@ -16,12 +16,12 @@ Almost anyone reading this probably isn't interested, but there's a bit of docum
 - run clean.bat (optional)
 - run run.bat
 
-~~After installing node, open up a command prompt. 
-- cd into ./frontend ~~
-~~- run `npm install`
-- run `npm run build`~~
-~~- cd into ./backend (../backend from the frontend folder)
-- run `npm install`~~
-~~- run `npm run build`
-- run `node ./dist/server/index.js`~~
-~~- navigate to localhost:50000 to test that the web server is working ~~
+<s> After installing node, open up a command prompt. 
+- cd into ./frontend
+- run `npm install`
+- run `npm run build`
+- cd into ./backend (../backend from the frontend folder)
+- run `npm install`
+- run `npm run build`
+- run `node ./dist/server/index.js`
+- navigate to localhost:50000 to test that the web server is working </s>
