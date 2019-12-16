@@ -10,14 +10,18 @@ Almost anyone reading this probably isn't interested, but there's a bit of docum
 
 ## Building and running
 
-I haven't had time to write a script that does it all at once yet.
+- Install node.js
+- Clone the repo
+- run build.bat
+- run clean.bat (optional)
+- run run.bat
 
-After installing node, open up a command prompt. 
-- cd into ./frontend
-- run `npm install`
-- run `npm run build`
-- cd into ./backend (../backend from the frontend folder)
-- run `npm install`
-- run `npm run build`
-- run `node ./dist/server/index.js`
-- navigate to localhost:50000 to test that the web server is working
+~~After installing node, open up a command prompt. 
+- cd into ./frontend ~~
+~~- run `npm install`
+- run `npm run build`~~
+~~- cd into ./backend (../backend from the frontend folder)
+- run `npm install`~~
+~~- run `npm run build`
+- run `node ./dist/server/index.js`~~
+~~- navigate to localhost:50000 to test that the web server is working ~~
