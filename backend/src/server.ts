@@ -1,5 +1,6 @@
 import * as WebSocket from "ws";
 import { Server } from "http";
+import { Logger } from "winston";
 
 const sceneStates = {
   scene1: "idle",
@@ -8,42 +9,35 @@ const sceneStates = {
   scene4: "idle"
 };
 
-const createCTWServer = (server: Server, path: string) => {
+const createCTWServer = (server: Server, path: string, wLogger: Logger) => {
   const wss = new WebSocket.Server({ server, path });
 
   wss.on("connection", (ws: WebSocket) => {
-    ws.on("message", (message: string) => {
-      const data = JSON.parse(message);
-      console.log("data: ");
-      console.log(data);
+    ws.on("message", (data: string) => {
+      const message = JSON.parse(data);
 
-      if (data) {
+      if (message) {
         if (
-          data.messageType === "status-update" &&
-          (data.source === "scene1" ||
-            data.source === "scene2" ||
-            data.source === "scene3" ||
-            data.source === "scene4")
+          message.messageType === "status-update" &&
+          (message.source === "scene1" ||
+            message.source === "scene2" ||
+            message.source === "scene3" ||
+            message.source === "scene4")
         ) {
-          switch (data.source) {
+          wLogger.info(message.source + ": " + message.status);
+
+          switch (message.source) {
             case "scene1":
-              sceneStates.scene1 = data.status;
-              console.log("setting scene 1");
+              sceneStates.scene1 = message.status;
               break;
             case "scene2":
-              sceneStates.scene2 = data.status;
-
-              console.log("setting scene 2");
+              sceneStates.scene2 = message.status;
               break;
             case "scene3":
-              sceneStates.scene3 = data.status;
-
-              console.log("setting scene 3");
+              sceneStates.scene3 = message.status;
               break;
             case "scene4":
-              sceneStates.scene4 = data.status;
-
-              console.log("setting scene 4");
+              sceneStates.scene4 = message.status;
               break;
           }
 
