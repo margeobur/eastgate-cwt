@@ -76,19 +76,19 @@ const SceneStatuses: React.FC = () => {
   return (
     <div className="h-100">
       <Row className="StatusIndicatorRow">
-        <Col xs={12} md={6}>
+        <Col xs={{ span: 12, order: 1 }} md={{ span: 6, order: 1 }}>
           <SceneIndicator scene="1" status={sceneStatuses.scene1} />
         </Col>
-        <Col xs={12} md={6}>
+        <Col xs={{ span: 12, order: 2 }} md={{ span: 6, order: 2 }}>
           <SceneIndicator scene="2" status={sceneStatuses.scene2} />
         </Col>
       </Row>
       <Row className="StatusIndicatorRow">
-        <Col xs={12} md={6}>
-          <SceneIndicator scene="4" status={sceneStatuses.scene4} />
-        </Col>
-        <Col xs={12} md={6}>
+        <Col xs={{ span: 12, order: 1 }} md={{ span: 6, order: 2 }}>
           <SceneIndicator scene="3" status={sceneStatuses.scene3} />
+        </Col>
+        <Col xs={{ span: 12, order: 2 }} md={{ span: 6, order: 1 }}>
+          <SceneIndicator scene="4" status={sceneStatuses.scene4} />
         </Col>
       </Row>
     </div>
