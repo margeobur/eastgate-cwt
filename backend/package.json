@@ -19,7 +19,7 @@
   "homepage": "https://github.com/margeobur/eastgate-cwt#readme",
   "dependencies": {
     "eastgate-cwt-frontend": "file:../frontend",
-    "express": "^4.17.1",
+    "express": "^4.22.1",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^4.4.0",
     "ws": "^7.2.0"
